@@ -35,7 +35,7 @@ spec:
 
       - name: hello-world
 
-        image: registry.cn-shenzhen.aliyuncs.com/vikinglion/hello_world
+        image: registry.cn-shenzhen.aliyuncs.com/vikinglion/flask_new
 
 
 
