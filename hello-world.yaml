@@ -1,0 +1,68 @@
+
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: my-first-app
+
+  labels:
+
+    app: hello-world
+
+spec:
+
+  replicas: 4
+
+  selector:
+
+    matchLabels:
+
+      app: hello-world
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: hello-world
+
+    spec:
+
+      containers:
+
+      - name: hello-world
+
+        image: registry.cn-shenzhen.aliyuncs.com/vikinglion/hello_world
+
+
+
+---
+
+
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: hello-world-service
+
+spec: 
+
+  ports:
+
+    - protocol: TCP
+
+      port: 8787
+
+      nodePort: 30002
+
+  type: NodePort
+
+  selector: 
+
+    app: hello-world
